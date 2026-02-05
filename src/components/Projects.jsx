@@ -8,7 +8,7 @@ const projects = [
       "A responsive personal portfolio built using React with modern animations and clean UI.",
     tech: ["React", "Tailwind", "Framer Motion"],
     github: "https://github.com/SenaraJayaweera/my-portfolio",
-    demo: "https://698458fdfa95c30774965286--dynamic-haupia-3a13d7.netlify.app",
+    demo: "https://dynamic-haupia-3a13d7.netlify.app/",
   },
   {
     title: "Vehicle Transportation Management System",

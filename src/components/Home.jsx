@@ -79,7 +79,7 @@ function Home() {
           </a>
 
           <a
-            href="/Senara_Nilmani_CV.pdf"
+            href="/Senara_CV.pdf"
             download
             className="px-8 py-3 border-2 border-white/30 backdrop-blur-sm text-white font-semibold rounded-lg hover:bg-white/10 hover:border-white/50 hover:scale-105 transition-all duration-300"
           >
