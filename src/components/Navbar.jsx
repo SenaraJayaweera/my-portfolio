@@ -1,18 +1,42 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { HiMenu, HiX } from "react-icons/hi";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
 
   const navLinks = [
     { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
-    {name: "Education", href:"#education"},
+    { name: "Education", href: "#education" },
     { name: "Skills", href: "#skills" },
     { name: "Projects", href: "#projects" },
     { name: "Contact", href: "#contact" },
   ];
+
+  // Scroll Spy Effect
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPos = window.scrollY + window.innerHeight / 3;
+
+      for (let link of navLinks) {
+        const section = document.getElementById(link.href.substring(1));
+        if (section) {
+          if (
+            scrollPos >= section.offsetTop &&
+            scrollPos < section.offsetTop + section.offsetHeight
+          ) {
+            setActiveSection(link.href.substring(1));
+          }
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // initial check
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [navLinks]);
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-black/30 backdrop-blur-md border-b border-white/10">
@@ -37,14 +61,22 @@ function Navbar() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="hidden md:flex gap-8"
         >
-          {navLinks.map((link, index) => (
+          {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="text-white hover:text-purple-400 transition-colors duration-300 relative group"
+              className={`relative transition-colors duration-300 ${
+                activeSection === link.href.substring(1)
+                  ? "text-purple-400"
+                  : "text-white hover:text-purple-400"
+              }`}
             >
               {link.name}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-blue-400 group-hover:w-full transition-all duration-300" />
+              <span
+                className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-purple-400 to-blue-400 transition-all duration-300 ${
+                  activeSection === link.href.substring(1) ? "w-full" : "w-0"
+                }`}
+              />
             </a>
           ))}
         </motion.div>
@@ -74,7 +106,11 @@ function Navbar() {
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="block text-white hover:text-purple-400 transition-colors duration-300 py-2"
+                  className={`block py-2 transition-colors duration-300 ${
+                    activeSection === link.href.substring(1)
+                      ? "text-purple-400"
+                      : "text-white hover:text-purple-400"
+                  }`}
                 >
                   {link.name}
                 </a>

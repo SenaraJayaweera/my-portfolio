@@ -79,7 +79,7 @@ function Home() {
           </a>
 
           <a
-            href="/resume.pdf"
+            href="/Senara_Nilmani_CV.pdf"
             download
             className="px-8 py-3 border-2 border-white/30 backdrop-blur-sm text-white font-semibold rounded-lg hover:bg-white/10 hover:border-white/50 hover:scale-105 transition-all duration-300"
           >
@@ -103,7 +103,7 @@ function Home() {
             <FaGithub />
           </a>
           <a
-            href="www.linkedin.com/in/senara-nilmani-9993a137a"
+            href="https://www.linkedin.com/in/senara-nilmani-9993a137a/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-blue-400 text-2xl transition-colors duration-300"

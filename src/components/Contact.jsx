@@ -75,7 +75,7 @@ function Contact() {
               </a>
 
               <a
-                href="www.linkedin.com/in/senara-nilmani-9993a137a"
+                href="https://www.linkedin.com/in/senara-nilmani-9993a137a/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-blue-400 text-3xl transition-colors"

@@ -3,6 +3,14 @@ import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 const projects = [
   {
+    title: "Personal Portfolio Website",
+    description:
+      "A responsive personal portfolio built using React with modern animations and clean UI.",
+    tech: ["React", "Tailwind", "Framer Motion"],
+    github: "https://github.com/SenaraJayaweera/my-portfolio",
+    demo: "https://698458fdfa95c30774965286--dynamic-haupia-3a13d7.netlify.app",
+  },
+  {
     title: "Vehicle Transportation Management System",
     description:
       "A web-based system to manage vehicle bookings, allocation, and scheduling efficiently.",
@@ -19,20 +27,12 @@ const projects = [
     demo: "https://loquacious-lebkuchen-1b2589.netlify.app",
   },
   {
-    title: "Personal Portfolio Website",
-    description:
-      "A responsive personal portfolio built using React with modern animations and clean UI.",
-    tech: ["React", "Tailwind", "Framer Motion"],
-    github: "https://github.com/yourusername/portfolio",
-    demo: "#",
-  },
-  {
     title: "Personal Financial Tracker",
     description:
        "Developed an Android mobile application to track income, expenses, and financial goals with persistent local data storage.",
     tech: ["Kotlin", "XML", "Android Studio"],
     github: "https://github.com/SenaraJayaweera/Financial-Tracker-Mobile-App",
-    demo: "",
+    
 
   }
 ];
